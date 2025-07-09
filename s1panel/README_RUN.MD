@@ -6,7 +6,15 @@ save
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
-sudo docker run --device /dev/ttyUSB0 --device /dev/bus/usb -p 8686:8686 s1panel-service
+#sudo docker run --device /dev/ttyUSB0 --device /dev/bus/usb -p 8686:8686 s1panel-service
+
+sudo docker run --network=host \
+  -v /sys/class/net:/sys/class/net:ro \
+  --device /dev/ttyUSB0 \
+  --device /dev/bus/usb \
+  --privileged \
+  -p 8686:8686 \
+  s1panel-service
 
 Both devices are needed, raw for display and normaly tty for serial control of RGB led
 

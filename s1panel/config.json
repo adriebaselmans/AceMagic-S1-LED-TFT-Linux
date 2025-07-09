@@ -1,14 +1,14 @@
 {
    "listen": "0.0.0.0:8686",
-   "theme": "themes/main/landscape_main.json",
+   "theme": "themes/simple_demo/portrait_simple.json",
    "poll": 500,
    "refresh": 1600,
    "heartbeat": 60000,
    "debug_update": false,
    "theme_list": [
       {
-         "name": "Piero24 Custom Theme",
-         "config": "themes/main/landscape_main.json"
+         "name": "a simple demo portrait orientation",
+         "config": "themes/simple_demo/portrait_simple.json"
       }
    ],
    "sensors": [
@@ -56,6 +56,32 @@
          "config": {
             "max_points": 300
          }
+      },
+      {
+         "module": "sensors/space.js",
+         "config": {
+            "name": "root",
+            "mount_point": "/",
+            "max_points": 300
+         }
+      },
+      {
+         "module": "sensors/weather.js",
+         "config": {
+            "name": "ams",
+            "country": "NL",
+            "imperial": false,
+            "forecast": 0
+         }
+      },
+      {
+         "module": "sensors/weather.js",
+         "config": {
+            "name": "ams",
+            "country": "NL",
+            "imperial": false,
+            "forecast": 1
+         }
       }
    ],
    "widgets": [
@@ -65,7 +91,8 @@
       "widgets/doughnut_chart.js",
       "widgets/bar_chart.js",
       "widgets/image.js",
-      "widgets/iconify.js"
+      "widgets/iconify.js",
+      "widgets/weather_icon.js"
    ],
    "canvas": {
       "width": 320,
@@ -75,9 +102,9 @@
    "device": "1-8:1.1",
    "led_config": {
       "device": "/dev/ttyUSB0",
-      "theme": 1,
+      "theme": 2,
       "speed": 3,
       "intensity": 3
    },
-   "portrait": true
+   "portrait": false
 }
