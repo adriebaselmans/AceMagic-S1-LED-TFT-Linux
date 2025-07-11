@@ -13,12 +13,6 @@
    ],
    "sensors": [
       {
-         "module": "sensors/clock.js"
-      },
-      {
-         "module": "sensors/calendar.js"
-      },
-      {
          "module": "sensors/cpu_usage.js",
          "config": {
             "max_points": 300
@@ -45,13 +39,6 @@
          }
       },
       {
-         "module": "sensors/network.js",
-         "config": {
-            "interface": "enp4s0",
-            "max_points": 300
-         }
-      },
-      {
          "module": "sensors/memory.js",
          "config": {
             "max_points": 300
@@ -64,24 +51,6 @@
             "mount_point": "/",
             "max_points": 300
          }
-      },
-      {
-         "module": "sensors/weather.js",
-         "config": {
-            "name": "ams",
-            "country": "NL",
-            "imperial": false,
-            "forecast": 0
-         }
-      },
-      {
-         "module": "sensors/weather.js",
-         "config": {
-            "name": "ams",
-            "country": "NL",
-            "imperial": false,
-            "forecast": 1
-         }
       }
    ],
    "widgets": [
@@ -91,9 +60,8 @@
       "widgets/doughnut_chart.js",
       "widgets/bar_chart.js",
       "widgets/image.js",
-      "widgets/iconify.js",
-      "widgets/weather_icon.js"
-   ],
+      "widgets/iconify.js"
+    ],
    "canvas": {
       "width": 320,
       "height": 170,
@@ -106,5 +74,5 @@
       "speed": 3,
       "intensity": 3
    },
-   "portrait": false
+   "portrait": true
 }

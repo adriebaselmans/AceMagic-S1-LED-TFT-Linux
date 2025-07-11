@@ -16,6 +16,17 @@ sudo docker run --network=host \
   -p 8686:8686 \
   s1panel-service
 
+sudo docker run -d \
+  --name s1panel \
+  --network=host \
+  -v /sys/class/net:/sys/class/net:ro \
+  --device /dev/ttyUSB0 \
+  --device /dev/bus/usb \
+  --privileged \
+  --restart=unless-stopped \
+  s1panel-service
+
+
 Both devices are needed, raw for display and normaly tty for serial control of RGB led
 
 
