@@ -10,12 +10,15 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-COPY package*.json ./
+# Copy only s1panel source files
+COPY s1panel/package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY s1panel/. .
 
 EXPOSE 8686
 
 CMD ["node", "main.js"]
+# Dockerfile for s1panel-service
+# ...existing content from your Dockerfile...
