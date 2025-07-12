@@ -1,7 +1,7 @@
 {
    "listen": "0.0.0.0:8686",
    "theme": "themes/simple_demo/portrait_simple.json",
-   "poll": 500,
+   "poll": 3000,
    "refresh": 1600,
    "heartbeat": 60000,
    "debug_update": false,
@@ -15,33 +15,38 @@
       {
          "module": "sensors/cpu_usage.js",
          "config": {
-            "max_points": 300
+            "max_points": 60,
+            "rate": 3000
          }
       },
       {
          "module": "sensors/cpu_temp.js",
          "config": {
-            "max_points": 300,
-            "fahrenheit": false
+            "max_points": 60,
+            "fahrenheit": false,
+            "rate": 5000
          }
       },
       {
          "module": "sensors/cpu_power.js",
          "config": {
-            "max_points": 300
+            "max_points": 60,
+            "rate": 5000
          }
       },
       {
          "module": "sensors/network.js",
          "config": {
             "interface": "enp2s0",
-            "max_points": 300
+            "max_points": 60,
+            "rate": 3000
          }
       },
       {
          "module": "sensors/memory.js",
          "config": {
-            "max_points": 300
+            "max_points": 60,
+            "rate": 3000
          }
       },
       {
@@ -49,7 +54,8 @@
          "config": {
             "name": "root",
             "mount_point": "/",
-            "max_points": 300
+            "max_points": 60,
+            "rate": 10000
          }
       }
    ],
